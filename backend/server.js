@@ -15,8 +15,9 @@ connectDB();
 
 
 const allowedOrigins = [
-  process.env.FRONTEND_URL, 
-];
+  'https://task-flow-ruby-chi.vercel.app',
+  'http://localhost:5173',
+].filter(Boolean);
 
 app.use(cors({
   origin: function (origin, callback) {
