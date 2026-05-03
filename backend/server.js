@@ -15,7 +15,8 @@ connectDB();
 
 
 const allowedOrigins = [
-  'https://task-flow-ruby-chi.vercel.app',
+  process.env.FRONTEND_URL,
+  // 'https://task-flow-ruby-chi.vercel.app',
   'http://localhost:5173',
 ].filter(Boolean);
 

@@ -70,12 +70,11 @@ const Projects = () => {
   };
 
   const handleDelete = async (id) => {
-    if (!window.confirm('Delete this project and all its tasks?')) return;
     try {
       await API.delete(`/projects/${id}`);
       setProjects(projects.filter((p) => p._id !== id));
     } catch (err) {
-      alert(err.response?.data?.message || 'Delete failed');
+      console.error(err.response?.data?.message || 'Delete failed');
     }
   };
 

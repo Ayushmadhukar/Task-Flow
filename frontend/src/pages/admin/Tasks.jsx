@@ -93,12 +93,11 @@ const Tasks = () => {
   };
 
   const handleDelete = async (id) => {
-    if (!window.confirm('Delete this task?')) return;
     try {
       await API.delete(`/tasks/${id}`);
       setTasks(tasks.filter((t) => t._id !== id));
     } catch (err) {
-      alert(err.response?.data?.message || 'Delete failed');
+      console.error(err.response?.data?.message || 'Delete failed');
     }
   };
 
